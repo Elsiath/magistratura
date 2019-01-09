@@ -133,11 +133,16 @@ html, p, a, span, b, i, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5,
   &:hover
     opacity: 1
 
-.btn-outline-light__curved_border
+.btn-navigate
   border-radius: 30px
+  color: #FFFFFF!important
+
+  &:hover
+    color: #FFFFFF!important
+    background: rgba(255,255,255,.3)
 
 @media (max-width: 768px)
-  .btn-outline-light__curved_border
+  .btn-navigate
     width: 60% !important
 
 .contacts-block
@@ -148,11 +153,10 @@ html, p, a, span, b, i, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5,
   border-radius: 20px
 
 .bordered-slider
-  border-radius: 0px
+  border-radius: 0
 
 .feedback-img
-  vertical-align: top
-  height: 100px
+  width: 100%
   border: 3px solid $primary-color
   border-radius: 50%
 
