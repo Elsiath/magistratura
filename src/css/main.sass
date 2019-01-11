@@ -56,6 +56,9 @@ html, p, a, span, b, i, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5,
   word-wrap: break-word !important
   white-space: normal !important
 
+b
+  font-weight: 700
+
 .navbar
   background: #ffffff !important
 
@@ -135,11 +138,11 @@ html, p, a, span, b, i, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5,
 
 .btn-navigate
   border-radius: 30px
-  color: #FFFFFF!important
+  color: #FFFFFF !important
 
   &:hover
-    color: #FFFFFF!important
-    background: rgba(255,255,255,.3)
+    color: #FFFFFF !important
+    background: rgba(255, 255, 255, .3)
 
 @media (max-width: 768px)
   .btn-navigate
@@ -147,7 +150,7 @@ html, p, a, span, b, i, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5,
 
 .contacts-block
   a
-    color: inherit!important
+    color: inherit !important
 
 .bordered-img
   border-radius: 20px
@@ -168,3 +171,37 @@ html, p, a, span, b, i, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5,
   left: 50px
   background: $primary-color
   z-index: -1
+
+.accordion_content-wrapper
+  background: white
+  border: 1px solid $primary-color
+  z-index: 0
+  min-height: 530px
+
+.accordion-title
+  cursor: pointer
+
+
+  &:not(.collapsed)
+    .accordion-title_number
+      background: $primary-color
+
+      p
+        color: white !important
+
+@media (min-width: 768px)
+  .accordion-title:not(.collapsed)
+    background: white
+    z-index: 99
+    overflow: hidden
+    position: relative
+    margin-right: -1px
+    border: 1px solid $primary-color
+    border-right: none
+
+.collapse, .collapsing
+  transition: none !important
+
+.collapsing
+  position: unset
+

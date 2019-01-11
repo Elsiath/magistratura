@@ -56,6 +56,11 @@ function fonts() {
         .pipe(gulp.dest('./build/fonts'));
 }
 
+function docs() {
+    return gulp.src('./src/docs/**/*.*')
+        .pipe(gulp.dest('./build/docs'));
+}
+
 function watch() {
 
     browserSync.init({
@@ -77,6 +82,6 @@ function clean() {
 
 gulp.task('watch', watch);
 gulp.task('build', gulp.series(clean,
-    gulp.parallel(styles, script, html, img, fonts)
+    gulp.parallel(styles, script, html, img, fonts, docs)
 ));
 gulp.task('dev', gulp.series('build', 'watch'));
