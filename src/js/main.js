@@ -20,4 +20,12 @@ $(document).ready(function () {
         return false;
     });
 
+
+    $('.panel-collapse').on('shown.bs.collapse', function (e) {
+        var $panel = $('.accordion-scroll');
+        $('html,body').animate({
+            scrollTop: $panel.offset().top - 100 + "px"
+        }, 200);
+    });
+
 });

@@ -56,7 +56,7 @@ html, p, a, span, b, i, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5,
   word-wrap: break-word !important
   white-space: normal !important
 
-b,strong
+b, strong
   font-weight: 700
 
 .navbar
@@ -172,6 +172,23 @@ b,strong
   background: $primary-color
   z-index: -1
 
+.accordion
+  .collapse, .collapsing
+    transition: none !important
+
+
+  .collapsing
+    position: unset
+
+  .collapse
+    -webkit-transition: none
+    transition: none
+
+  .collapsing
+    -webkit-transition: none
+    transition: none
+    display: none !important
+
 .accordion_content-wrapper
   background: white
   border: 1px solid $primary-color
@@ -198,10 +215,3 @@ b,strong
     margin-right: -1px
     border: 1px solid $primary-color
     border-right: none
-
-.collapse, .collapsing
-  transition: none !important
-
-.collapsing
-  position: unset
-
