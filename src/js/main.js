@@ -10,6 +10,14 @@ $(document).ready(function () {
         });
         return false;
     });
-
+    $("a.easy-scroll").click(function () {
+        $("html, body").animate({
+            scrollTop: $($(this).attr("href")).offset().top - 100 + "px"
+        }, {
+            duration: 500,
+            easing: "swing"
+        });
+        return false;
+    });
 
 });
