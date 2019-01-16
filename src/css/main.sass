@@ -1,7 +1,7 @@
 @import 'bootstrap.min.css'
 
 $primary-color: #3d659a
-$secondary-color: #1E4AB7
+$secondary-color: #3d659a
 $muted-color: #e0ebf3
 
 body
@@ -90,6 +90,8 @@ b, strong
   width: 100%
   height: 100%
   animation: zoomBg 50s linear infinite !important
+  background-size: 200% auto
+  background-position: center center
 
 @keyframes zoomBg
   0%
@@ -100,6 +102,24 @@ b, strong
 
   100%
     transform: scale(1.0)
+
+.bg-1
+  background: url('../img/bg-1.png') center center
+
+.bg-2
+  background: url('../img/bg-2.png') center center
+
+.bg-3
+  background: url('../img/bg-3.png') center center
+
+.bg-4
+  background: url('../img/bg-4.png') center center
+
+.bg-5
+  background: url('../img/bg-5.png') center center
+
+.bg-6
+  background: url('../img/bg-6.png') center center
 
 .bg-effect
   position: absolute
@@ -122,25 +142,6 @@ b, strong
   100%
     background-position: 0 50%
 
-.bg-1
-  background: url('../img/bg-1.png')
-
-.bg-2
-  background: url('../img/bg-2.png')
-
-.bg-3
-  background: url('../img/bg-3.png')
-
-.bg-4
-  background: url('../img/bg-4.png') center center
-
-.bg-5
-  background: url('../img/bg-5.png') center center
-
-.bg-6
-  background: url('../img/bg-6.png') center center
-
-
 .custom-button
   background-color: $primary-color !important
   border-radius: 50px !important
@@ -149,7 +150,7 @@ b, strong
   box-sizing: content-box !important
 
   &:hover
-    background: linear-gradient(to right, $secondary-color -5%, $primary-color 105%)
+    background: -webkit-linear-gradient(left,#1e4ab7 -5%,#18baba 105%)
 
 .event-block
   .event-block_title
@@ -184,6 +185,12 @@ b, strong
 
   &:hover
     opacity: 1
+
+
+.btn:focus,.btn:active
+  border: none !important
+  outline: none !important
+  box-shadow: none !important
 
 .btn-pagenav
   border-radius: 30px
@@ -231,23 +238,6 @@ b, strong
   background: $primary-color
   z-index: -1
 
-.accordion
-  .collapse, .collapsing
-    transition: none !important
-
-
-  .collapsing
-    position: unset
-
-  .collapse
-    -webkit-transition: none
-    transition: none
-
-  .collapsing
-    -webkit-transition: none
-    transition: none
-    display: none !important
-
 .accordion_content-wrapper
   background: white
   border: 1px solid $primary-color
@@ -256,7 +246,6 @@ b, strong
 
 .accordion-title
   cursor: pointer
-
 
   &:not(.collapsed)
     .accordion-title_number
@@ -268,7 +257,7 @@ b, strong
 @media (min-width: 768px)
   .accordion-title:not(.collapsed)
     background: white
-    z-index: 99
+    z-index: 999
     overflow: hidden
     position: relative
     margin-right: -1px
@@ -281,3 +270,5 @@ b, strong
 .direction .fa:before
   content: "\f106"
 
+.sticky-step-nav
+  z-index: 999 !important
