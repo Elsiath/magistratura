@@ -1,6 +1,6 @@
 @import 'bootstrap.min.css'
 
-$primary-color: #18baba
+$primary-color: #3d659a
 $secondary-color: #1E4AB7
 $muted-color: #e0ebf3
 
@@ -48,7 +48,7 @@ body
   src: url("../fonts/ALS Schlange Sans Thin.otf")
   font-weight: 100
 
-html, p, a, span, b,  strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+html, p, a, span, b, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   font-family: 'ALS', sans-serif !important
   font-weight: normal
 
@@ -79,8 +79,67 @@ b, strong
     border-left: 1px solid $muted-color
 
 .presentation-block
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/first-screen-bg.png') center center
-  background-size: cover
+  position: relative
+  overflow: hidden
+
+.bg
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -1
+  width: 100%
+  height: 100%
+  animation: zoomBg 50s linear infinite !important
+
+@keyframes zoomBg
+  0%
+    transform: scale(1.0)
+
+  50%
+    transform: scale(1.2)
+
+  100%
+    transform: scale(1.0)
+
+.bg-effect
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -1
+  width: 100%
+  height: 100%
+  background-size: 200% 200% !important
+  animation: Gradient 8s ease infinite !important
+  background: linear-gradient(-45deg, rgba(25, 37, 107, 0.45), rgba(32, 101, 163, 0.26), rgba(0, 0, 0, 0.51))
+
+@keyframes Gradient
+  0%
+    background-position: 0 50%
+
+  50%
+    background-position: 100% 50%
+
+  100%
+    background-position: 0 50%
+
+.bg-1
+  background: url('../img/bg-1.png')
+
+.bg-2
+  background: url('../img/bg-2.png')
+
+.bg-3
+  background: url('../img/bg-3.png')
+
+.bg-4
+  background: url('../img/bg-4.png') center center
+
+.bg-5
+  background: url('../img/bg-5.png') center center
+
+.bg-6
+  background: url('../img/bg-6.png') center center
+
 
 .custom-button
   background-color: $primary-color !important
