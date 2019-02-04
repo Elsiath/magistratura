@@ -9,7 +9,8 @@ const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin');
 const sourcemaps = require('gulp-sourcemaps');
-var rigger = require('gulp-rigger');
+const rigger = require('gulp-rigger');
+const connect = require('gulp-connect-php');
 
 sass.compiler = require('node-sass');
 
@@ -30,7 +31,7 @@ function styles() {
 }
 
 function script() {
-    return gulp.src(['./src/js/jquery.min.js', './src/js/bootstrap.min.js', './src/js/main.js'])
+    return gulp.src(['./src/js/jquery.min.js', './src/js/bootstrap.min.js', './src/js/validator.min.js', './src/js/form-scripts.js', './src/js/main.js'])
         .pipe(sourcemaps.init())
         .pipe(concat('main.js'))
         .pipe(uglify())
@@ -40,7 +41,7 @@ function script() {
 }
 
 function html() {
-    return gulp.src('./src/*.html')
+    return gulp.src(['./src/*.+(html|php)','!./src/_*.*'])
         .pipe(rigger())
         .pipe(gulp.dest('./build'))
         .pipe(browserSync.stream({once: true}));
@@ -73,7 +74,7 @@ function watch() {
 
     gulp.watch('./src/css/**/*.sass', styles);
     gulp.watch('./src/js/**/*.js', script);
-    gulp.watch('./src/**/*.html', html);
+    gulp.watch('./src/**/*.+(html|php)', html);
 }
 
 function clean() {
