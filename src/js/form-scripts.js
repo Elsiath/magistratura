@@ -20,7 +20,7 @@ function submitForm(){
     $.ajax({
         type: "POST",
         url: "form-process.php",
-        data: "name=" + name + "&email=" + email + "&message=" + message,
+        data: "name=" + name + "&email=" + email + "&message=" + message + "&g-recaptcha-response=" + grecaptcha.getResponse(),
         success : function(text){
             if (text == "success"){
                 formSuccess();

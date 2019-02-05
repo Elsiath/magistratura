@@ -342,9 +342,7 @@
 
         <div class="row">
             <div class="col-md-7 mb-5 mb-md-0 d-none d-md-block">
-                <div class="pr-4">
-                    <img src="img/hands-up.jpg" class="img-fluid bordered-img" alt="">
-                </div>
+                <div class="question-image"></div>
             </div>
             <div class="col-md-5">
                 <div class="feedback-form-wrapper p-4 px-md-5 py-md-4">
@@ -356,22 +354,19 @@
                             <label for="name">Как Вас зовут?</label>
                             <input type="text" class="form-control" id="name" placeholder="Введите ФИО"
                                    data-error="Введите корректное имя" required>
-                            <div class="help-block with-errors"></div>
+                            <div class="help-block with-errors text-danger small"></div>
                         </div>
                         <div class="form-group">
                             <label for="email">На какой адрес ответить?</label>
-                            <input type="text" class="form-control" id="email" aria-describedby="email"
+                            <input type="email" class="form-control" id="email" aria-describedby="email"
                                    placeholder="Введите свой email" required>
-                            <small id="emailHelp" class="form-text text-muted">На этот email вы получите ответ на
-                                свой
-                                вопрос
-                            </small>
-                            <div class="help-block with-errors"></div>
+                            <div class="help-block with-errors text-danger small"></div>
                         </div>
                         <div class="form-group">
                             <label for="message">Что Вам подсказать?</label>
                             <textarea class="form-control" id="message" rows="3" style="resize: none!important;"
                                       required></textarea>
+                            <div class="help-block with-errors text-danger small"></div>
                         </div>
                         <div class="form-check mb-3">
                             <input type="checkbox" class="form-check-input my-2" id="exampleCheck1" required
@@ -379,6 +374,9 @@
                             <label class="form-check-label small" for="exampleCheck1">Согласен на <a href=""
                                                                                                      class="color-primary">обратотку
                                 персональных данных</a></label>
+                        </div>
+                        <div class="form-group d-flex flex-row justify-content-center">
+                            <div class="g-recaptcha mx-auto" data-sitekey="6LftGI8UAAAAAIhbJZ9Ry3QVYiJcI0y8UVuN6O5p"></div>
                         </div>
                         <div class="form-group">
                             <div class="custom-button-wrapper text-center">
@@ -390,7 +388,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                        <div id="msgSubmit" class="h5 text-center hidden text-danger"></div>
                     </form>
                 </div>
             </div>
@@ -716,6 +714,7 @@
 //= _arrowtop.html
 
 <!--Scripts-->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="js/main.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"
         integrity="sha384-R5JkiUweZpJjELPWqttAYmYM1P3SNEJRM6ecTQF05pFFtxmCO+Y1CiUhvuDzgSVZ"
